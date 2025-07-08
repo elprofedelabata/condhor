@@ -1,0 +1,466 @@
+/*** COLORES ***/
+:root {
+  --azul-mar: #0081a7;
+  --azul-mar-oscuro: #006785;
+  --verde-turquesa: #00afb9;
+  --amarillo-claro: #fdfcdc;
+  --naranja-claro: #fed9b7;
+  --rojo-melocoton: #f07167;
+  --gris-claro: #f5f5f5;
+}
+
+/*** FONTS ***/
+@font-face {
+  font-family: 'NationalPark';
+  src: url('../fonts/NationalPark-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/*** TODAS LAS PÁGINAS ***/
+body{
+    background-color: var(--azul-mar);
+    height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'NationalPark', sans-serif;
+}
+
+div{
+  font-family: 'NationalPark', sans-serif;
+}
+
+#layout {
+  display: flex;
+  height: 100%;
+  padding: 0 12px 12px 0;
+}
+
+#contenido {
+  flex: 1;               /* ocupa todo el espacio restante */
+  height: 100%;
+  padding: 3rem;         /* espacio interno */
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+/*** index.html ***/
+
+/* 1) Título de bienvenida */
+.welcome {
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem 0;
+  color: #666;
+  text-align: center;
+}
+
+.welcome-logo {
+  color: #666;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 2) Botones de acción principales */
+.start-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.start-actions button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #ccc;
+  background-color: var(--gris-claro);
+  color: var(--azul-mar);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  width:210px;
+  height:120px;
+}
+
+.start-actions button svg {
+  height:60px;
+  width:60px;
+}
+
+
+.start-actions button:hover {
+  color: var(--rojo-melocoton);
+}
+
+
+/* 3) Grid de cursos anteriores */
+.cursos-anteriores {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--azul-mar);
+  text-align: center;
+}
+
+#previous-courses {
+  display: block;
+  gap: 1rem;
+  width:100%;
+  height:290px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.courses-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.courses-table tr {
+  height:30px;
+}
+
+
+.courses-table td {
+  background: var(--gris-claro);
+  color: #333;
+}
+
+.courses-table td svg {
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+.actions-btn {
+  background: none;
+  color: var(--azul-mar);
+  border: none;
+  padding: 0.5rem 0 0.5rem 0;
+  cursor: pointer;
+}
+
+.actions-btn:hover {
+  color: var(--rojo-melocoton);
+}
+
+
+
+/*** barrasuperior.html ***/
+#barra-superior {
+  height: 50px;
+  background-color: #fff;
+  color:#000;
+  padding:1em
+}
+
+
+/*** barralateral.html ***/
+#barra-lateral {
+  width: 200px;
+  height: 100%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 1rem;
+  gap: 0.25rem;
+  background-color: none;
+  font-family: 'NationalPark', sans-serif;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  padding: 0.25rem 0 0.25rem 0.5rem;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--azul-mar-oscuro);
+  margin-left:20px;
+}
+
+.sidebar-btn .icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  color: #eee;
+}
+
+.sidebar-btn .label {
+  margin-left:0.5rem;
+  font-size: 0.8rem;
+  color: #eee;
+  font-weight: 600;
+}
+
+.sidebar-btn:hover {
+  background-color: #ffffff22;
+}
+
+.sidebar-btn[aria-pressed="true"] {
+  width: 90%;
+  background-color: #fff;
+  color: var(--azul-mar);
+}
+
+.sidebar-btn[aria-pressed="true"] .label {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.sidebar-btn[aria-pressed="true"] .icon {
+  width: 24px;
+  height: 24px;
+  color: var(--azul-mar);
+}
+
+.sidebar-category {
+  background-color:#ffffff33;
+  width:100%;
+  font-size:1.2rem;
+  color:#fff;
+  font-weight:bold;
+  padding:0.5rem 0;
+  text-align:center;
+  margin:3rem 0 0.5rem 0;
+}
+
+
+/*** profesores.html ***/
+.prof-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.prof-toolbar input {
+  flex: 1;
+  max-width: 600px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.prof-toolbar .actions a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--azul-mar);
+  font-weight: bold;
+}
+
+.prof-toolbar .actions a:hover {
+  color: var(--rojo-melocoton);
+}
+
+.prof-count-text {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.prof-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-size:0.9rem;
+}
+.prof-table thead {
+  background-color: none;
+  color: var(--azul-mar);
+  font-size:0.8rem;
+  border:none;
+}
+.prof-table td {
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+  white-space: nowrap;
+}
+.prof-table tbody {
+  border: 1px solid #ddd;
+}
+.prof-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.prof-table tbody tr:hover {
+  background-color: #e0f7fa;
+}
+
+.btn-acciones {
+  flex: 1;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.6rem;
+  border: none;
+  background: none;
+  color: var(--azul-mar);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+/*** VENTANAS MODALES ***/
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: none;
+  background: rgba(0,0,0,0.6);
+  z-index: 100;
+}
+
+.modal-header {
+  background: var(--azul-mar);
+  color: #fff;
+  width:600px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius:16px 16px 0 0;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 1rem;
+  width: 600px;
+  border-radius: 0 0 16px 16px;
+  min-height: 420px;
+}
+.modal-form .form-group {
+  display:flex;
+  margin-bottom: 0.75rem;
+  border: none;
+  padding: 0;
+}
+.form-estado {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border: none;
+}
+
+.modal-form label {
+  margin-bottom: 0.25rem;
+  width:300px;
+  text-align: right;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.modal-form input {
+  width: 100%;
+  box-sizing: border-box;
+  margin:0 3rem 0 1rem;
+  padding: 0.5rem;
+  border: 1px solid #999;
+  border-radius: 12px;
+}
+.modal-form fieldset {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;       /* distancia uniforme entre cada elemento */
+  border: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.form-estado label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  width: auto;
+  text-align: left;
+}
+
+.form-estado input[type="radio"] {
+  width: auto;
+  margin: 0 0.4rem 0 0;
+  accent-color: var(--azul-mar);
+}
+
+.modal-form select {
+  width: 100%;
+  box-sizing: border-box;
+  margin:0 3rem 0 1rem;
+  border: 1px solid #999;
+  border-radius: 12px;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.conditional {
+  display: none;
+  gap: 0.5rem;
+  margin-left:100px;
+}
+
+.modal-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.modal-actions button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: var(--azul-mar);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-actions button:hover {
+  background-color: var(--rojo-melocoton);
+}
+
+
+.modal-dialog {
+  position: fixed;
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  display: none;
+  flex-direction: column;
+  background:#fff;
+  border-radius:16px;
+  z-index: 101;
+  width: 600px;
+}
+
+
+
